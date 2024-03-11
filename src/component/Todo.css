@@ -9,3 +9,10 @@
   font-weight: 600;
   margin-bottom: 5px;
 }
+.completedTodo {
+  padding: 0.5rem;
+  border: 1px solid green;
+  color: green;
+  margin: 0.5rem;
+  border-radius: 10px;
+}

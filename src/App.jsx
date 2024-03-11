@@ -20,9 +20,9 @@ function App() {
     setTodoArr(data.todos);
     setTodo({ title: "", description: "" });
   };
-  // useEffect(() => {
-  //   fetchAPI();
-  // }, []);
+  useEffect(() => {
+    handleTodoDisplay();
+  }, []);
 
   return (
     <>
@@ -31,7 +31,7 @@ function App() {
         setTodo={setTodo}
         handleTodoDisplay={handleTodoDisplay}
       />
-      <Todo todoArr={todoArr} />
+      <Todo todoArr={todoArr} handleTodoDisplay={handleTodoDisplay} />
     </>
   );
 }
