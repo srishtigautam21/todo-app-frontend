@@ -42,6 +42,7 @@ const CreateTodo = ({ todo, setTodo, handleTodoDisplay }) => {
               handleAddTodo();
             }
           }}
+          className='button'
         >
           Add a Todo
         </button>

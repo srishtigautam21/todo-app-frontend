@@ -24,6 +24,9 @@ const Todo = ({ todoArr, handleTodoDisplay }) => {
   };
   return (
     <div>
+      <div className='heading' style={{ textAlign: "center", margin: "10px" }}>
+        Todos
+      </div>
       {todoArr?.map((todo, index) => {
         return (
           <div key={index} className='container'>
