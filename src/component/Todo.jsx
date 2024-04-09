@@ -1,3 +1,5 @@
+import "./Todo.css";
+
 const Todo = ({ todoArr, handleTodoDisplay }) => {
   const handleTodoComplete = async (todo) => {
     // const id = todo._id;

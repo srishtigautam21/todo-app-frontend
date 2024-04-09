@@ -1,6 +1,6 @@
 import React from "react";
 // import { useState } from "react";
-import "./Todo.css";
+import "./CreateTodo.css";
 
 const CreateTodo = ({ todo, setTodo, handleTodoDisplay }) => {
   const handleAddTodo = async () => {
@@ -17,30 +17,35 @@ const CreateTodo = ({ todo, setTodo, handleTodoDisplay }) => {
     handleTodoDisplay();
   };
   return (
-    <div>
-      <input
-        type='text'
-        placeholder='text'
-        value={todo.title}
-        onChange={(e) => setTodo({ ...todo, title: e.target.value })}
-      />
-      <br />
-      <input
-        type='text'
-        placeholder='description'
-        value={todo.description}
-        onChange={(e) => setTodo({ ...todo, description: e.target.value })}
-      />
-      <br />
-      <button
-        onClick={() => {
-          if (todo.title !== "" && todo.description !== "") {
-            handleAddTodo();
-          }
-        }}
-      >
-        Add a Todo
-      </button>
+    <div className='wrapper'>
+      <div className='todo-input-wrapper'>
+        <div className='heading'>Todo App</div>
+        <input
+          type='text'
+          placeholder='title'
+          className='input-todo'
+          value={todo.title}
+          onChange={(e) => setTodo({ ...todo, title: e.target.value })}
+        />
+        <br />
+        <input
+          type='text'
+          className='input-todo'
+          placeholder='description'
+          value={todo.description}
+          onChange={(e) => setTodo({ ...todo, description: e.target.value })}
+        />
+        <br />
+        <button
+          onClick={() => {
+            if (todo.title !== "" && todo.description !== "") {
+              handleAddTodo();
+            }
+          }}
+        >
+          Add a Todo
+        </button>
+      </div>
     </div>
   );
 };
