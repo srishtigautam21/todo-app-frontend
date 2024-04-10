@@ -1,6 +1,6 @@
 import "./Todo.css";
 
-const Todo = ({ todoArr, handleTodoDisplay }) => {
+const Todo = ({ todoArr, handleTodoDisplay, setTodoArr }) => {
   const handleTodoComplete = async (todo) => {
     // const id = todo._id;
     console.log(todo._id, typeof todo._id);
@@ -15,6 +15,9 @@ const Todo = ({ todoArr, handleTodoDisplay }) => {
       const data = await response.json();
       if (response.status === 200) {
         handleTodoDisplay();
+        //Add completed todo to new completed todo arr
+        setTodoArr(todoArr.filter((todo) => todo.completed !== true));
+        console.log(data, "here");
       }
     } catch (e) {
       console.log(e);

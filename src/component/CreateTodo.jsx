@@ -19,7 +19,7 @@ const CreateTodo = ({ todo, setTodo, handleTodoDisplay }) => {
   return (
     <div className='wrapper'>
       <div className='todo-input-wrapper'>
-        <div className='heading'>Todo App</div>
+        <div className='heading'>Add Todos</div>
         <input
           type='text'
           placeholder='title'

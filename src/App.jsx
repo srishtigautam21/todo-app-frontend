@@ -32,7 +32,11 @@ function App() {
         setTodo={setTodo}
         handleTodoDisplay={handleTodoDisplay}
       />
-      <Todo todoArr={todoArr} handleTodoDisplay={handleTodoDisplay} />
+      <Todo
+        todoArr={todoArr}
+        handleTodoDisplay={handleTodoDisplay}
+        setTodoArr={setTodoArr}
+      />
     </>
   );
 }
