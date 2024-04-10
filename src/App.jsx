@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import Navigation from "./component/Navigation";
 import "./App.css";
 import CreateTodo from "./component/CreateTodo";
 import Todo from "./component/Todo";
@@ -26,6 +26,7 @@ function App() {
 
   return (
     <>
+      <Navigation />
       <CreateTodo
         todo={todo}
         setTodo={setTodo}
