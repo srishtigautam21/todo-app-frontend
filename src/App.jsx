@@ -3,6 +3,7 @@ import Navigation from "./component/Navigation";
 import "./App.css";
 import CreateTodo from "./component/CreateTodo";
 import Todo from "./component/Todo";
+import CompleteTodos from "./component/CompleteTodos";
 
 function App() {
   const [todo, setTodo] = useState({
@@ -10,6 +11,7 @@ function App() {
     description: "",
   });
   const [todoArr, setTodoArr] = useState([]);
+  const [completeTodoArr, setCompleteTodoArr] = useState([]);
 
   const handleTodoDisplay = async () => {
     const response = await fetch("http://localhost:3000/todos", {
@@ -36,7 +38,10 @@ function App() {
         todoArr={todoArr}
         handleTodoDisplay={handleTodoDisplay}
         setTodoArr={setTodoArr}
+        completeTodoArr={completeTodoArr}
+        setCompleteTodoArr={setCompleteTodoArr}
       />
+      <CompleteTodos completeTodoArr={completeTodoArr} />
     </>
   );
 }
