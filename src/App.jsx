@@ -4,6 +4,7 @@ import "./App.css";
 import CreateTodo from "./component/CreateTodo";
 import Todo from "./component/Todo";
 import CompleteTodos from "./component/CompleteTodos";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const [todo, setTodo] = useState({
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation />
       <CreateTodo
         todo={todo}
         setTodo={setTodo}
@@ -40,8 +41,49 @@ function App() {
         setTodoArr={setTodoArr}
         completeTodoArr={completeTodoArr}
         setCompleteTodoArr={setCompleteTodoArr}
-      />
-      <CompleteTodos completeTodoArr={completeTodoArr} />
+      /> */}
+      <Routes>
+        {/* <Navigation />
+        <CreateTodo
+          todo={todo}
+          setTodo={setTodo}
+          handleTodoDisplay={handleTodoDisplay}
+        />
+        <Todo
+          todoArr={todoArr}
+          handleTodoDisplay={handleTodoDisplay}
+          setTodoArr={setTodoArr}
+          completeTodoArr={completeTodoArr}
+          setCompleteTodoArr={setCompleteTodoArr}
+        /> */}
+        <Route path='/' element={<Navigation />} />
+        <Route
+          path='/'
+          element={
+            <CreateTodo
+              todo={todo}
+              setTodo={setTodo}
+              handleTodoDisplay={handleTodoDisplay}
+            />
+          }
+        />
+        <Route
+          path='/'
+          element={
+            <Todo
+              todoArr={todoArr}
+              handleTodoDisplay={handleTodoDisplay}
+              setTodoArr={setTodoArr}
+              completeTodoArr={completeTodoArr}
+              setCompleteTodoArr={setCompleteTodoArr}
+            />
+          }
+        />
+        <Route
+          path='/completedTodos'
+          element={<CompleteTodos completeTodoArr={completeTodoArr} />}
+        />
+      </Routes>
     </>
   );
 }
